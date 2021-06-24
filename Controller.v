@@ -7,7 +7,7 @@ module Controller(opcode,clk, rst, next, jump, PCL, LorD, MR, MW, LR, StackSrc,R
 		ToS, Push, Pop, LA, LB, Ain, Bin, RegDst;
 	output reg[1:0] ALUop;
 
-	reg[3:0] ps,ns;
+	reg[3:0] ps = 0, ns = 0;
 
 	
 parameter [3:0]
@@ -30,7 +30,7 @@ parameter [3:0]
 			SP    : ns = ALU ;
 			ALU   : ns = Save;
 			Save  : ns = 0   ;
-			default ns = 0;
+			default: ns = 0;
 		endcase
 	end
 
