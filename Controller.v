@@ -51,7 +51,7 @@ parameter [3:0]
 			RTYPE : begin Pop = 1; ALUop = 3; 							end
 			PUSH  : begin MR = 1; LorD = 0; Push = 1; StackSrc = 0;  				end
 			POP   : begin MW = 1; LorD = 0; Pop = 1;  						end
-			JZ    : begin jump = 0; next = 1; PCL = 1;  						end
+			JZ    : begin jump = 0; next = 0; PCL = 1;  						end
 			JUMP  : begin jump = 1; next = 0; PCL = 1;  						end
 			SP    : begin Pop = 1; ToS = 1; RegDst = 1; LB = 1;  					end
 			ALU   : begin Ain = 0; Bin = 1; ALUop = opcode[1:0];  					end

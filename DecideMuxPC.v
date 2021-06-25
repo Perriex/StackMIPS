@@ -5,6 +5,6 @@ module DecideMuxPC(tos_Stack, next, jump, decide);
 	input[7:0] tos_Stack;
 	output decide;
 
-	assign decide = next || (~( jump || ~(&tos_Stack)));
+	assign decide = next || (~jump && |tos_Stack);
 
 endmodule
